@@ -1,0 +1,56 @@
+.sitetitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Chicle';
+    font-size: 100px;
+    margin: 0px;
+}
+
+.water-image, .water-container, .bottle-count, .water-log{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.water-image{
+    margin: 0px;
+}
+
+.water-container{
+    flex-direction: column;
+    gap: 10px;
+}
+
+#dropdown{
+    font-family: 'Chicle';
+    font-size: 50px;
+}
+
+.bottle-count{
+    gap: 5px;
+}
+
+.water-log{
+    gap: 10px;
+}
+
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#water-log{
+    font-family: "Modak", serif;
+    font-size: 65px;
+    font-weight: normal;
+    color: black;
+    font-style: normal;
+    padding: 0px;
+}
+
+.water-math{
+    font-family: 'Chicle';
+    font-size: 30px;
+}
