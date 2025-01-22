@@ -8,36 +8,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Chicle&family=Modak&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="sitetitle">AK(tion) Water Logger</h1>
-    <div class="water-image">
-        <img src="assets/bottle2.avif" class="water-pic" alt="water bottle">
-    </div>
-    <div class="water-container">
-        <select id="dropdown" name="options">
-            <option value="option3">Poland Spring</option>
-            <option value="option1">Dasani</option>
-            <option value="option2">Aquafina</option>
-            <option value="option3">Essentia</option>
-            <option value="option3">Smart Water</option>
-            <option value="option3">Evian</option>
-            <option value="option3">Fiji</option>
-            <option value="option3">Nestle Pure Life</option>
-            <option value="option3">Voss</option>
-            <option value="option3">Perrier</option>
-        </select>
-        <div class="bottle-count">
-            <p>Bottles:</p>
-            <button class ="water-math" onclick="decrement()">-</button>
-            <div id="count" class="water-math">0</div>
-            <button class ="water-math" onclick="increment()">+</button>
+    <h1 class="sitetitle">AK(tion) Water Bottle Logger</h1>
+    <div class="main-container">
+        <div class="water-image">
+            <img src="assets/bottle2.avif" class="water-pic" alt="water bottle">
         </div>
-        <div class="submit">
-            <button class="water-button" onclick="logwater()">Log Water</button>
+        <div class="inner-container">
+            <div class="water-container">
+                <select id="dropdown" name="options">
+                    <option value="poland-spring">Poland Spring</option>
+                    <option value="dasani">Dasani</option>
+                    <option value="aquafina">Aquafina</option>
+                    <option value="essentia">Essentia</option>
+                    <option value="smart-water">Smart Water</option>
+                    <option value="evian">Evian</option>
+                    <option value="fiji">Fiji</option>
+                    <option value="nestle-pure-life">Nestle Pure Life</option>
+                    <option value="voss">Voss</option>
+                    <option value="perrier">Perrier</option>
+                </select>
+                <div class="bottle-count">
+                    <p>Bottles:</p>
+                    <button class="water-math" onclick="decrement()">-</button>
+                    <div id="count" class="water-math">0</div>
+                    <button class="water-math" onclick="increment()">+</button>
+                </div>
+                <div class="submit">
+                    <button class="water-button" onclick="logwater()">Log Water</button>
+                </div>
+            </div>
+            <div class="water-log">
+                <div id="water-log">0</div>
+                <select id="metric-units" name="unit" onchange="convert()">
+                    <option value="bottles">bottles</option>
+                    <option value="cups">cups</option>
+                    <option value="gallons">gallons</option>
+                    <option value="liters">l</option>
+                    <option value="milliliters">ml</option>
+                    <option value="ounces">fl oz</option>
+                </select>
+                <p>drank today</p>
+            </div>
         </div>
     </div>
-    <div class="water-log">
-        <div id="water-log">0</div>
-        <p>bottles drank today</p>
     <script src="index.js"></script>
 </body>
 </html>

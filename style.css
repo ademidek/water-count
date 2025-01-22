@@ -1,3 +1,11 @@
+p{
+    font-family: 'Chicle';
+    font-size: 30px;
+    font-weight: normal;
+    color: black;
+    font-style: normal;
+}
+
 .sitetitle{
     display: flex;
     justify-content: center;
@@ -7,14 +15,21 @@
     margin: 0px;
 }
 
-.water-image, .water-container, .bottle-count, .water-log{
+.main-container, .inner-container, .water-image, .water-container, .bottle-count, .water-log, .metric-container{
     display:flex;
     justify-content: center;
     align-items: center;
 }
 
+.inner-container{
+    flex-direction: column;
+    gap: 10px;
+}
+
 .water-image{
     margin: 0px;
+    width: 50%;
+    height: 50%;
 }
 
 .water-container{
@@ -22,9 +37,10 @@
     gap: 10px;
 }
 
-#dropdown{
+#dropdown, #metric-units{
     font-family: 'Chicle';
-    font-size: 50px;
+    font-size: 30px;
+    width: fit-content;
 }
 
 .bottle-count{
@@ -41,7 +57,7 @@
     align-items: center;
 }
 
-#water-log{
+#water-log, #water-total{
     font-family: "Modak", serif;
     font-size: 65px;
     font-weight: normal;
@@ -53,4 +69,9 @@
 .water-math{
     font-family: 'Chicle';
     font-size: 30px;
+}
+
+.water-button{
+    font-family: 'Chicle';
+    font-size: 35px;
 }
