@@ -3,6 +3,8 @@ let count = parseInt(countElement.innerHTML, 10);
 let wlElement = document.getElementById('water-log');
 let waterlog = parseFloat(document.getElementById("water-log").textContent); 
 let waterUnit = document.getElementById("metric-units").value;
+let prevUnit = "bottle";
+let prevConst = 1;
 
 function increment() {
     count += 1; 
@@ -24,23 +26,30 @@ function logwater(){
 }
 
 function convert() {
-    let waterUnit = document.getElementById("metric-units").value;  
-    let waterlog = parseFloat(document.getElementById("water-log").textContent);
-    
-    if (waterUnit === "gallons") {
-        waterlog = waterlog * 0.1328125000;
-        document.getElementById("water-log").innerHTML = waterlog;
-    } else if (waterUnit === "liters") {
-        waterlog = waterlog * 0.5;
-        document.getElementById("water-log").innerHTML = waterlog;
-    } else if (waterUnit === "ounces") {
-        waterlog = waterlog * 16;
-        document.getElementById("water-log").innerHTML = waterlog;
-    } else if (waterUnit === "cups") {
-        waterlog = waterlog * 2.11;
-        document.getElementById("water-log").innerHTML = waterlog;
-    } else if (waterUnit === "milliliters") {
-        waterlog = waterlog * 500;
-        document.getElementById("water-log").innerHTML = waterlog;
+    // Get the selected unit from the dropdown
+    waterUnit = document.getElementById("metric-units").value;  
+
+    // Conversion factors for each unit
+    const conversionFactors = {
+        bottle: 1,
+        gallons: 0.1328125000,
+        liters: 0.5,
+        ounces: 16,
+        cups: 2.11,
+        milliliters: 500
+    };
+    waterlog = waterlog / prevConst;
+
+    if (waterUnit === "bottle") {
+        // Edge case for bottle
+        waterlog = Math.round(waterlog * 100) / 100;
+    } else {
+        waterlog = waterlog * conversionFactors[waterUnit];
     }
+
+    document.getElementById("water-log").innerHTML = waterlog.toFixed(2);
+
+    prevUnit = waterUnit;
+    prevConst = conversionFactors[waterUnit];
 }
+
